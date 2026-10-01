@@ -1,0 +1,105 @@
+{
+  "scope": "educational model-reliability evaluation on a public diagnostic dataset",
+  "dataset_rows": 569,
+  "features": 30,
+  "split_rows": {
+    "train": 341,
+    "validation": 114,
+    "test": 114
+  },
+  "candidate_validation": {
+    "calibrated_logistic": {
+      "average_precision": 0.9915,
+      "brier_score": 0.0342
+    },
+    "random_forest": {
+      "average_precision": 0.9592,
+      "brier_score": 0.0595
+    }
+  },
+  "selected_model": "calibrated_logistic",
+  "decision_threshold": 0.265,
+  "false_negative_cost": 8.0,
+  "false_positive_cost": 1.0,
+  "validation_cost": 11.0,
+  "test_metrics": {
+    "roc_auc": 0.9895,
+    "average_precision": 0.9841,
+    "brier_score": 0.0445,
+    "precision": 0.8889,
+    "recall": 0.9302,
+    "f1": 0.9091,
+    "true_negative": 66,
+    "false_positive": 5,
+    "false_negative": 3,
+    "true_positive": 40
+  },
+  "cohort_stability": {
+    "lower_mean_radius": {
+      "rows": 61,
+      "roc_auc": 1.0,
+      "average_precision": 1.0,
+      "brier_score": 0.0238,
+      "precision": 1.0,
+      "recall": 0.8333,
+      "f1": 0.9091,
+      "true_negative": 55,
+      "false_positive": 0,
+      "false_negative": 1,
+      "true_positive": 5
+    },
+    "higher_mean_radius": {
+      "rows": 53,
+      "roc_auc": 0.9679,
+      "average_precision": 0.9875,
+      "brier_score": 0.0684,
+      "precision": 0.875,
+      "recall": 0.9459,
+      "f1": 0.9091,
+      "true_negative": 11,
+      "false_positive": 5,
+      "false_negative": 2,
+      "true_positive": 35
+    }
+  },
+  "simulated_drift": {
+    "mean_radius_psi": 0.5967,
+    "mean_texture_psi": 0.2505,
+    "mean_probability_change": 0.0161
+  },
+  "top_permutation_features": [
+    {
+      "feature": "radius error",
+      "importance": 0.01097
+    },
+    {
+      "feature": "area error",
+      "importance": 0.01074
+    },
+    {
+      "feature": "worst symmetry",
+      "importance": 0.00736
+    },
+    {
+      "feature": "mean concavity",
+      "importance": 0.00582
+    },
+    {
+      "feature": "worst fractal dimension",
+      "importance": 0.00576
+    },
+    {
+      "feature": "worst concavity",
+      "importance": 0.00448
+    },
+    {
+      "feature": "worst smoothness",
+      "importance": 0.0039
+    },
+    {
+      "feature": "mean concave points",
+      "importance": 0.00372
+    }
+  ],
+  "runtime_seconds": 1.86
+}
